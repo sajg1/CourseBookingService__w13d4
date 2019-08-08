@@ -44,7 +44,9 @@ public class CoursebookingserviceApplicationTests {
 	@Test
 	public void canCreateBooking(){
 		Course course = new Course("Java", "Edinburgh", 1);
+		courseRepository.save(course);
 		Customer customer = new Customer("Bob", "Edinburgh", 15);
+		customerRepository.save(customer);
 		Booking booking = new Booking("08-08-19", customer, course);
 		bookingRepository.save(booking);
 	}
