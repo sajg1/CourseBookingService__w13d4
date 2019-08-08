@@ -1,7 +1,9 @@
 package com.codeclan.example.coursebookingservice;
 
 import com.codeclan.example.coursebookingservice.models.Course;
+import com.codeclan.example.coursebookingservice.models.Customer;
 import com.codeclan.example.coursebookingservice.repositories.CourseRepository.CourseRepository;
+import com.codeclan.example.coursebookingservice.repositories.CustomerRepository.CustomerRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class CoursebookingserviceApplicationTests {
 	@Autowired
 	CourseRepository courseRepository;
 
+	@Autowired
+	CustomerRepository customerRepository;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -23,6 +28,12 @@ public class CoursebookingserviceApplicationTests {
 	public void createCourse() {
 		Course course = new Course("Java", "Edinburgh", 1);
 		courseRepository.save(course);
+	}
+
+	@Test
+	public void createCustomer(){
+		Customer customer = new Customer("Bob", "Edinburgh", 15);
+		customerRepository.save(customer);
 	}
 
 }
