@@ -35,6 +35,9 @@ public class DataLoader implements ApplicationRunner {
         Course javaScript = new Course("JavaScript", "Glasgow", 5);
         courseRepository.save(javaScript);
 
+        Course ruby = new Course("Ruby", "Inverness", 9);
+        courseRepository.save(ruby);
+
 
         Customer bob = new Customer("Bob", "Edinburgh", 15);
         customerRepository.save(bob);
@@ -47,5 +50,8 @@ public class DataLoader implements ApplicationRunner {
 
         Booking booking2 = new Booking("20-06-19", joe, javaScript);
         bookingRepository.save(booking2);
+
+        bob.addBooking(booking1);
+
     }
 }
